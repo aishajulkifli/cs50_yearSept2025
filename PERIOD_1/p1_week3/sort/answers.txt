@@ -1,0 +1,27 @@
+sort1 uses: Bubble Sort
+
+How do you know?: The random list takes more time than sorted list
+
+sort2 uses: Merge Sort
+
+How do you know?: Take around the same timing but lesser
+
+sort3 uses: Selection Sort
+
+How do you know?: Takes around the same time but higher
+
+
+
+
+// notes
+
+// sort 1 random 10k :.191s
+// sort 1 sorted 10k :.024s
+
+// sort 2 random 10k : .040s
+// sort 2 sorted 10k : .031s
+
+// sort 3 random 10k : .136s
+// sort 3 sorted 10k : .139s
+
+// sort/ $ time ./sort1 random10000.txt
