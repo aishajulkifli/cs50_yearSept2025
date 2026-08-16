@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        document.addEventListener('DOMContentLoaded', function () {
+            // MULTIPLE CHOICE: add click listeners to each .mcq button
+            document.querySelectorAll('.mcq').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    // disable all buttons for this question (optional)
+                    let parent = btn.parentElement;
+                    parent.querySelectorAll('button').forEach(b => b.disabled = true);
+
+                    if (btn.dataset.correct === "true") {
+                        btn.style.backgroundColor = 'green';
+                        parent.querySelector('.feedback').textContent = 'Correct!';
+                    } else {
+                        btn.style.backgroundColor = 'red';
+                        parent.querySelector('.feedback').textContent = 'Incorrect';
+                }
+            });
+        });
+
+        // FREE RESPONSE: when user clicks #check
+        document.querySelector('#check').addEventListener('click', function () {
+            let input = document.querySelector('#answer');
+            let user = input.value.trim().toLowerCase();
+
+            // set the correct answer here (lowercase)
+            let correct = 'malware';
+
+            if (user === correct) {
+                input.style.backgroundColor = 'green';
+                document.querySelector('#feedback2').textContent = 'Correct!';
+            } else {
+                input.style.backgroundColor = 'red';
+                document.querySelector('#feedback2').textContent = 'Incorrect';
+            }
+        });
+    });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>What’s a computer’s favorite part to keep warm?</h3>
+
+                <button class="mcq" data-correct="false">CPU</button>
+                <button class="mcq" data-correct="true">Processor</button>
+                <button class="mcq" data-correct="false">hard drive</button>
+                <!-- TODO: Add multiple choice question here -->
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>What do you call a dangerous virus that spreads online?</h3>
+
+                <input id="answer" type="text" placeholder="Type your answer">
+                <button id="check">Check Answer</button>
+
+                <p id="feedback2" class="feedback"></p>
+                <!-- TODO: Add free response question here -->
+            </div>
+        </div>
+    </body>
+</html>
+
