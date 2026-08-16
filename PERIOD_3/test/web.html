@@ -1,0 +1,52 @@
+<html>
+    <head> <title>Embedded Project</title> </head>
+          <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                font-family: Arial, sans-serif;
+                background-color: grey;
+            }
+            #Off, #On {
+                padding: 10px 20px;
+                margin: 10px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        </style>
+    <body>
+
+        <h1>Embedded Project: Web Controller</h1>
+        <button id = "Off"> Unalive it!</button>
+        <button id = "On"> It's alive! </button>
+        <script>
+           document.getElementById("Off").addEventListener("click", function() {
+                fetch('/off', { method: 'POST' })
+                    .then(response => response.text())
+                    .then(data => console.log(data))
+                    .catch(error => console.error('Error:', error));
+            });
+
+            document.getElementById("On").addEventListener("click", function() {
+                fetch('/on', { method: 'POST' })
+                    .then(response => response.text())
+                    .then(data => console.log(data))
+                    .catch(error => console.error('Error:', error));
+            });
+
+            function setColor() {
+
+                fetch('/color')
+                    .then(response => response.text())
+                    .then(color => {
+                        document.body.style.backgroundColor = color;
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+            setInterval(setColor, 1000); // Update color every second
+        </script>
+    </body>
+</html>
