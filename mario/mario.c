@@ -3,5 +3,6 @@
 
 int main(void)
 {
-    int 
+    int height = get_int("Height: ");
+    printf()
 }
