@@ -14,7 +14,7 @@ int main(void)
 
     for (int i = 0; i < height; i++)
     {
-        print_row(height - i - 1, i + 1);
+        print_row(height - i - 1, i + 1, 2, i + 1);
     }
 
 }
@@ -26,7 +26,17 @@ void print_row(int spaces, int left_bricks, int gap, int right_bricks)
         printf(" ");
     }
 
-    for (int i = 0; i < bricks; i++)
+    for (int i = 0; i < left_bricks; i++)
+    {
+        printf("#");
+    }
+
+    for (int i = 0; i < gap; i++)
+    {
+        printf("  ");
+    }
+
+    for (int i = 0; i < right_bricks; i++)
     {
         printf("#");
     }
