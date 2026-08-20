@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <cs50.h>
 
-void print_row(int spaces, int bricks);
+void print_row(int spaces, int left_bricks, int gap, int right_bricks);
 
 int main(void)
 {
@@ -19,7 +19,7 @@ int main(void)
 
 }
 
-void print_row(int spaces, int bricks)
+void print_row(int spaces, int left_bricks, int gap, int right_bricks)
 {
     for (int i = 0; i < spaces; i++)
     {
