@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int calculate_coins(int cents);
+int calculate_quarters(int cents);(int cents);
 
 int main(void)
 {
@@ -14,7 +14,8 @@ int main(void)
     while (cents < 0);
 }
 
-int calculate_coins(int cents)
+int calculate_quarters(int cents)
 {
-    
+    return cents / 25;
 }
+
