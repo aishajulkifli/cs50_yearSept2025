@@ -15,6 +15,20 @@ int main(void)
         cents = get_int("Change owed: ");
     }
     while (cents < 0);
+
+    int quarters = calculate_quarters(cents);
+    cents = cents - quarters * 25;
+
+    int dimes = calculate_dimes(cents);
+    cents = cents - dimes * 10;
+
+    int nickels = calculate_nickels(cents);
+    cents = cents - nickels * 5;
+
+    int pennies = calculate_pennies(cents);
+    cents = cents - pennies * 1;
+
+    printf("%i\n", quarters + dimes + nickels + pennies);
 }
 
 int calculate_quarters(int cents)
