@@ -10,4 +10,6 @@ int main(void)
    printf("last_digit: %d\n", last_digit);
 
    card_number /= 10;
+
+   printf("card_number: %ld\n", card_number);
 }
