@@ -5,11 +5,15 @@ int main(void)
 {
    long card_number = get_long("Number: ");
 
+   int position = 1;
+
    while (card_number > 0)
       {
          int digit = card_number % 10;
          printf("digit: %d\n", digit);
          card_number /= 10;
+
+         position = position + 1;
       }
 
       return 0;
