@@ -11,6 +11,12 @@ int main(void)
       {
          int digit = card_number % 10;
          printf("digit: %d\n", digit);
+
+         if (position % 2 == 0)
+         {
+            digit = digit * 2;
+            printf("digit * 2: %d\n", digit);
+         }
          card_number /= 10;
 
          position = position + 1;
